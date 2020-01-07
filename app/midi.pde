@@ -93,64 +93,79 @@ void controllerChange(int channel, int number, int value) {
     fader[6][3] = map(value, 0, 127, 0, 1);
   } else if (number == 61) {
     fader[7][3] = map(value, 0, 127, 0, 1);
-  } 
+  }
 }
 void noteOn(int channel, int pitch, int velocity) {
-  
+
   if (pitch == 1) {
+
     btns1[0] = true;
+    btns1[1] = false;
+    btns1[2] = false;
+    btns1[3] = false;
   }
   if (pitch == 4) {
+    btns1[0] = false;
     btns1[1] = true;
+    btns1[2] = false;
+    btns1[3] = false;
   }
   if (pitch == 7) {
+    btns1[0] = false;
+    btns1[1] = false;
     btns1[2] = true;
+    btns1[3] = false;
   } 
   if (pitch == 10) {
+    btns1[0] = false;
+    btns1[1] = false;
+    btns1[2] = false;
     btns1[3] = true;
   } 
+  
   if (pitch == 13) {
-    btns1[4] = true;
-  } 
+    btns1[4] = !btns1[4];
+  }
+  
   if (pitch == 16) {
-    btns1[5] = true;
+    btns1[5] = !btns1[5];
   } 
   if (pitch == 19) {
-    btns1[6] = true;
+    btns1[6] = !btns1[6];
   } 
   if (pitch == 22) {
-    btns1[7] = true;
+    btns1[7] = !btns1[7];
   } 
- 
+
 
   println(pitch + " note On");
 }
 
 void noteOff(int channel, int pitch, int velocity) {
-  
+
   if (pitch == 1) {
-    btns1[0] = false;
+    //btns1[0] = false;
   }
   if (pitch == 4) {
-    btns1[1] = false;
+    //btns1[1] = false;
   }
   if (pitch == 7) {
-    btns1[2] = false;
+    //btns1[2] = false;
   } 
   if (pitch == 10) {
-    btns1[3] = false;
+    //btns1[3] = false;
   } 
   if (pitch == 13) {
-    btns1[4] = false;
+    //btns1[4] = false;
   } 
   if (pitch == 16) {
-    btns1[5] = false;
+    //btns1[5] = false;
   } 
   if (pitch == 19) {
-    btns1[6] = false;
+    //btns1[6] = false;
   } 
   if (pitch == 22) {
-    btns1[7] = false;
+    //btns1[7] = false;
   } 
 
 
